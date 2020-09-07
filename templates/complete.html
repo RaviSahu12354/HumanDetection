@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          width: 33.3%;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="column">
+                <img src="{{url_for('send_image', path='person_images', filename=image_name)}}", style="width:500px;height:600px;", id="mypicture">
+                <div class="container">
+                    <h2 class="display-4">Person Image</h2>
+                </div>
+                
+            </div>
+       
+            <div class="column">
+                <img src="{{url_for('send_image', path='images', filename=image_name)}}", style="width:500px;height:600px;", id="mypicture">
+                <div class="container">
+                    <h2 class="display-4">Actual Image</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">{{person}}</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
